@@ -32,7 +32,11 @@ conda activate vitis-ai-pytorch
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 992 x 1420 : ( This Step will take approx 12 + 3 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
+```
+```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
+```
+```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode test --use_cpu  
 ```
 
@@ -40,6 +44,8 @@ python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode t
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
+```
+```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode test --use_cpu 
 ```
 #### 2.1 Compile & Run Inference  - Synthetic Data 
