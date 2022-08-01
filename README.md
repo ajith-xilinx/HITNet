@@ -57,7 +57,7 @@ python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --sha
 python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --shape=1,3,540,960 --wego_subgraph_min_ops_number=1 --device=wego
 ```
 
-#### To Run Inference of HITNet model, run the above commands with "--device=cpu"
+###### To Run Inference of HITNet model, run the above commands with "--device=cpu"
 ------------------------------------------------------------
 #### 3.1 Qunatize - Real Data  
 ------------------------------------------------------------
