@@ -6,6 +6,7 @@
 
 
 ### Step 1 : On Host System : 
+------------------------------------------------------------
 
 ```
 sudo service docker restart 
@@ -14,6 +15,7 @@ sudo docker exec -it vitisai_2.5 bash
 ```
 
 ### Step 2 : Inside Docker : 
+------------------------------------------------------------
 
 ##### Set VCK5000 Environment 
 
