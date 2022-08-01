@@ -31,8 +31,7 @@ python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode c
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu  
 ```
 
-##### To Run Calibration & Generate INT8 Model for model of Input shape 540 x 960  
-###### This Step will take approx 5 + 3 Minutes, for calibration & INT8 model generation respectively 
+##### To Run Calibration & Generate INT8 Model for model of Input shape 540 x 960 ( This Step will take approx 5 + 3 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
