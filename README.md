@@ -17,7 +17,11 @@ Inside Docker :
 ##### To run Qunatization for the model with Input shape 540x960 : 
 ```
 cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 12 Minutes Approx 
+```
+```
+pyton synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 12 Minutes Approx 
+```
+```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
 ```
 This will generate pt model at path  
