@@ -24,7 +24,7 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
 conda activate 
 ```
-#### Qunatize, Compile & Run with Synthetic Data 
+#### Qunatize, Compile & Run Inference with Synthetic Data 
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
 ```
@@ -49,6 +49,23 @@ conda activate
 python synthetic_inference.py 
 ```
 ##### To Run Inference of HITNet model on Synthetic Input of shape 540 x 960
+```
+python synthetic_inference.py 
+```
+
+#### Qunatize, Compile & Run Inference with Real Data 
+
+##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
+```
+cd /workspace/Vitis-AI/HITNet
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu  
+```
+##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
+```
+conda activate 
+```
+##### To Run Inference of HITNet model on Synthetic Input of shape 992 x 1420
 ```
 python synthetic_inference.py 
 ```
