@@ -15,12 +15,22 @@ sudo docker exec -it vitisai_2.5 start
 
 ### Step 2 : ( Inside Docker )
 
+##### Set VCK5000 Environment 
+
+```
+source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
+```
 #### To run Synthetic Quantization : 
 
 ##### To run Qunatization for the model with Input shape 540x960 : 
 ##### Go to the HitNet directory
 ```
 cd /workspace/Vitis-AI/HITNet
+```
+
+##### Activate Conda Environment 
+```
+conda activate 
 ```
 ##### Run Calibration. This Step will take approx 12 Minutes 
 ```
