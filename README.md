@@ -15,24 +15,33 @@ Inside Docker :
 #### To run Synthetic Quantization : 
 
 ##### To run Qunatization for the model with Input shape 540x960 : 
+##### Go to the HitNet directory
 ```
 cd /workspace/Vitis-AI/HITNet
 ```
+##### Run Calibration. This Step will take approx 12 Minutes 
 ```
-pyton synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 12 Minutes Approx 
+pyton synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
 ```
+##### Generate the Quantized Model. This Step will take approx 3 Minutes 
+
 ```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
 ```
-This will generate pt model at path  
+
 
 ##### To Quantize the model with Input shape 992x1420 : 
+##### Go to the HitNet directory
 ```
 cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 12 Minutes Approx 
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 12 Minutes Approx 
 ```
-This will generate pt model at path
+##### Run Calibration. This Step will take approx 12 Minutes 
+```
+pyton synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
+```
+##### Generate the Quantized Model. This Step will take approx 3 Minutes 
 
-#### To run Inference with Syntehtic Data : 
+```
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
+```
 
