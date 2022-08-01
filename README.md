@@ -10,7 +10,7 @@
 ```
 sudo service docker restart 
 sudo docker start vitis_ai_2.5 
-sudo docker exec -it vitisai_2.5 start
+sudo docker exec -it vitisai_2.5 bash
 ```
 
 ### Step 2 : ( Inside Docker )
