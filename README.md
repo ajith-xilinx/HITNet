@@ -1,6 +1,6 @@
-<center> <h1> HITNet </center>
+# HITNet 
 
-## Run HITNet Inference on VCK5000 with Vitis-AI 2.5 
+## <center> <h2> HITNet Inference on VCK5000 with Vitis-AI 2.5 </center>
 
 ###### HITNet: Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching
 
