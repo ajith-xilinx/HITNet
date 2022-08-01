@@ -21,7 +21,7 @@ sudo docker exec -it vitisai_2.5 bash
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
 
-#### [2.1] Qunatize, Compile & Run Inference with Synthetic Data 
+#### 2.1 Qunatize, Compile & Run Inference with Synthetic Data 
 ------------------------------------------------------------
 ##### A. Activate VITIS-AI Pytorch Conda Environment 
 ```
