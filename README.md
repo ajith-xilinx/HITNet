@@ -31,14 +31,14 @@ conda activate
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu  
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode test --use_cpu  
 ```
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 540 x 960 ( This Step will take approx 5 + 3 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode test --use_cpu 
 ```
 
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
@@ -59,8 +59,8 @@ python synthetic_inference.py
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu  
+python quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
+python quantize.py --nndct_leaky_relu_approximate False --quant_mode test --use_cpu  
 ```
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
@@ -68,5 +68,5 @@ conda activate
 ```
 ##### To Run Inference of HITNet model on Synthetic Input of shape 992 x 1420
 ```
-python synthetic_inference.py 
+python inference.py 
 ```
