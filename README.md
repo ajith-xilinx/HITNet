@@ -23,24 +23,21 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 #### To run Synthetic Quantization : 
 
 ##### To run Qunatization for the model with Input shape 540x960 : 
-##### Go to the HitNet directory
-```
-cd /workspace/Vitis-AI/HITNet
-```
 
 ##### Activate Conda Environment 
 ```
 conda activate 
 ```
-##### Run Calibration. This Step will take approx 12 Minutes 
+##### To Run Calibration & Generate IN8 Model for model of Input shape 992 x 1420
+##### This Step will take approx 12 + 3 Minutes, for calib & model generation respectively 
 ```
-pyton synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
-```
-##### Generate the Quantized Model. This Step will take approx 3 Minutes 
-
-```
+cd /workspace/Vitis-AI/HITNet
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
 ```
 
-##### To run Qunatization for the model with Input shape 540x960, repeat Step 2 with " --h 540 --w 960 "  
-
+##### To Run Calibration & Generate IN8 Model for model of Input shape 540 x 960  
+```
+cd /workspace/Vitis-AI/HITNet
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
