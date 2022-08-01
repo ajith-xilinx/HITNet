@@ -1,4 +1,4 @@
-# HITNet
+# <center> HITNet </center>
 
 ## Run HITNet Inference on VCK5000 with Vitis-AI 2.5 
 
