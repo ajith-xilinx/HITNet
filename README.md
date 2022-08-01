@@ -69,7 +69,7 @@ python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --sha
 
 ###### To Run Inference of HITNet model, run the above commands with "--device=cpu"
 
-<br></br>
+<br>
 
 #### 3.1 Qunatize - Real Data  
 ------------------------------------------------------------
