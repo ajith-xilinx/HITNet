@@ -5,7 +5,7 @@
 #### HITNet : [Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching](https://arxiv.org/pdf/2007.12140.pdf)
 
 
-### 1. On Host System : 
+### Step 1 : On Host System : 
 ------------------------------------------------------------
 
 ```
