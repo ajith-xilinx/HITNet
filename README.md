@@ -14,19 +14,13 @@ Inside Docker :
 
 #### To run Synthetic Quantization : 
 
-##### For Input Shape 540x960
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
 ```
-##### For Input Shape 992x1420
 
-```
-cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
-```
+#### To run Qunatization for shape 992x1420, run the above commands with arguments as "--h 992 --w 1420"
 
 ### Install Vitis-AI 2.5 
 
