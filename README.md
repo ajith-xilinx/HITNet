@@ -23,7 +23,7 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 
 #### 2.1 Qunatize, Compile & Run Inference with Synthetic Data 
 ------------------------------------------------------------
-##### A. Activate VITIS-AI Pytorch Conda Environment 
+##### Activate VITIS-AI Pytorch Conda Environment 
 ```
 conda activate vitis-ai-pytorch 
 ```
@@ -54,7 +54,7 @@ python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --sha
 python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --shape=1,3,540,960 --wego_subgraph_min_ops_number=1 --device=wego
 ```
 
-##### To Run Inference of HITNet model, run the above commands with "--device=cpu"
+#### To Run Inference of HITNet model, run the above commands with "--device=cpu"
 
 #### 2.2 Qunatize, Compile & Run Inference with Real Data 
 ------------------------------------------------------------
