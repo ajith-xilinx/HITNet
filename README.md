@@ -20,15 +20,11 @@ sudo docker exec -it vitisai_2.5 start
 ```
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
-#### To run Synthetic Quantization : 
-
-##### To run Qunatization for the model with Input shape 540x960 : 
-
 ##### Activate Conda Environment 
 ```
 conda activate 
 ```
-##### To Run Calibration & Generate IN8 Model for model of Input shape 992 x 1420
+##### To Run Calibration & Generate INT8 Model for model of Input shape 992 x 1420
 ##### This Step will take approx 12 + 3 Minutes, for calib & model generation respectively 
 ```
 cd /workspace/Vitis-AI/HITNet
@@ -36,7 +32,7 @@ python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode c
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
 ```
 
-##### To Run Calibration & Generate IN8 Model for model of Input shape 540 x 960  
+##### To Run Calibration & Generate INT8 Model for model of Input shape 540 x 960  
 ```
 cd /workspace/Vitis-AI/HITNet
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
