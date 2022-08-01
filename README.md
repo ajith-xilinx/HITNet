@@ -2,7 +2,7 @@
 
 ## Run HITNet Inference on VCK5000 with Vitis-AI 2.5 
 
-### HITNet: Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching
+###### HITNet: Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching
 
 
 ### Step 1 : On Host System : 
@@ -23,7 +23,7 @@ sudo docker exec -it vitisai_2.5 bash
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
 
-#### 2.1 Qunatize - Synthetic Data 
+#### 2.1 Qunatize - Synthetic Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
 ```
@@ -50,7 +50,7 @@ python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --qu
 ```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --quant_mode test 
 ```
-#### 2.2 Compile & Run Inference  - Synthetic Data 
+#### 2.2 Compile & Run Inference  - Synthetic Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
@@ -71,7 +71,7 @@ python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --sha
 
 <br>
 
-#### 3.1 Qunatize - Real Data  
+#### 3.1 Qunatize - Real Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
 ```
@@ -91,7 +91,7 @@ python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_t
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
                    --nndct_leaky_relu_approximate False --use_cpu --quant_mode test
 ```
-#### 3.2 Compile & Run Inference  - Real Data 
+#### 3.2 Compile & Run Inference  - Real Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
