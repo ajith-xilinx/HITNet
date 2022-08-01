@@ -79,12 +79,12 @@ cd /workspace/Vitis-AI/HITNet
 ```
 ```
 python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
---data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \ 
+--data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
 --nndct_leaky_relu_approximate False --use_cpu --quant_mode calib
 ```
 ```
 python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
---data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \ 
+--data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
 --nndct_leaky_relu_approximate False --use_cpu --quant_mode test
 ```
 #### 3.2 Compile & Run Inference  - Real Data 
