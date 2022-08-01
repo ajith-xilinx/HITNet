@@ -24,6 +24,8 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
 conda activate 
 ```
+#### Qunatize, Compile & Run with Synthetic Data 
+
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
