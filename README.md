@@ -50,7 +50,7 @@ python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --qu
 ```
 python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --quant_mode test 
 ```
-#### 2.1 Compile & Run Inference  - Synthetic Data 
+#### 2.2 Compile & Run Inference  - Synthetic Data 
 ------------------------------------------------------------
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
