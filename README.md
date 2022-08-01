@@ -14,7 +14,6 @@ sudo docker exec -it vitisai_2.5 bash
 ```
 
 ### Step 2 : Inside Docker : 
----------------
 
 ##### Set VCK5000 Environment 
 
@@ -26,6 +25,7 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 conda activate 
 ```
 #### Qunatize, Compile & Run Inference with Synthetic Data 
+------------------------------------------------------------
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
 ```
