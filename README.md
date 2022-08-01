@@ -55,6 +55,7 @@ python synthetic_inference.py
 ```
 
 #### Qunatize, Compile & Run Inference with Real Data 
+------------------------------------------------------------
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for model of Input shape 992 x 1420 ( This Step will take approx 12 + 3 Minutes ) 
 ```
