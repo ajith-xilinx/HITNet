@@ -20,7 +20,7 @@ sudo docker exec -it vitisai_2.5 start
 ```
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
-##### Activate Conda Environment 
+##### Activate VITIS-AI Pytorch Conda Environment 
 ```
 conda activate 
 ```
@@ -28,13 +28,27 @@ conda activate
 ###### This Step will take approx 12 + 3 Minutes, for calibration & INT8 model generation respectively 
 ```
 cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu  
 ```
 
 ##### To Run Calibration & Generate INT8 Model for model of Input shape 540 x 960  
-###### This Step will take approx 12 + 3 Minutes, for calibration & INT8 model generation respectively 
+###### This Step will take approx 5 + 3 Minutes, for calibration & INT8 model generation respectively 
 ```
 cd /workspace/Vitis-AI/HITNet
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # 
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu # Takes 
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
+python synthetic_quantize.py --nndct_leaky_relu_approximate False --quant_mode calib --use_cpu 
+```
+
+##### Activate VITIS-AI WeGo Conda Environment 
+```
+conda activate 
+```
+##### To Run Inferecne of HITNet model of Input shape 992 x 1420
+```
+python synthetic_inference.py 
+```
+##### To Run Inferecne of HITNet model of Input shape 540 x 960
+```
+python synthetic_inference.py 
+```
