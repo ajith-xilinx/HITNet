@@ -20,7 +20,7 @@ sudo docker exec -it vitisai_2.5 bash
 ```
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
-
+------------------------------------------------------------
 #### 2.1 Qunatize, Compile & Run Inference with Synthetic Data 
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
@@ -55,7 +55,7 @@ python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --sha
 ```
 
 #### To Run Inference of HITNet model, run the above commands with "--device=cpu"
-
+------------------------------------------------------------
 #### 2.2 Qunatize, Compile & Run Inference with Real Data 
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
