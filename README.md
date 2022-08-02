@@ -112,7 +112,7 @@ python inference.py
 ### Performance Issues and Future Improvments :
 There might be end2end performance issues when deploying the HitModel on the DPU using WeGO due to:
 
-* Currently, DPU supports only a limit set of operators [Supported-Operators-and-DPU-Limitations]
+* Currently, DPU supports only a limit set of operators [Supported-Operators-and-DPU-Limitations](https://docs.xilinx.com/r/en-US/ug1414-vitis-ai/Supported-Operators-and-DPU-Limitations)
 * For those operators that not supported by the DPU, WeGO will dispatch them to CPU side for execution to enable a flexiable deployment workflow. 
 * Currently, HitNet model has many operators *not* supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
 * For the model with input size 540x960, after partition, there will be 26 CPU subgrahs and 25 DPU subgraphs
