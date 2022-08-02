@@ -21,7 +21,7 @@ sudo docker exec -it vitisai_2.5 bash
 ### II. Inside Docker : 
 ------------------------------------------------------------
 
-##### Set VCK5000 Environment 
+##### Set VCK5000 Environment :
 
 ```
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
@@ -29,7 +29,7 @@ source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 
 #### 1.1 Qunatize - Synthetic Data :
 ------------------------------------------------------------
-##### Activate VITIS-AI Pytorch Conda Environment 
+##### Activate VITIS-AI Pytorch Conda Environment :
 ```
 conda activate vitis-ai-pytorch 
 ```
@@ -62,12 +62,12 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
 
 #### 1.2 Compile & Run Inference  - Synthetic Data :
 ------------------------------------------------------------
-##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
+##### Activate VITIS-AI WeGo Conda Environment to Run Inference :
 ```
 conda activate vitis-ai-wego-torch 
 ```
 
-##### To Run Inference of Quantized HITNet model on Synthetic Input of shape 540 x 960 ( This Step will take approx 5 Minutes )
+##### To Run Inference of Quantized HITNet model on Synthetic Input of shape 540 x 960 : ( This Step will take approx 5 Minutes )
 ```
 python synthetic_inference.py --model quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego
 ```
@@ -87,7 +87,7 @@ python synthetic_inference.py --model quant_model_992x1420/PredictModel_int.pt -
 ```
 conda activate vitis-ai-pytorch 
 ```
-##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 ( This Step will take approx 45 + 5 Minutes ) 
+##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 : ( This Step will take approx 45 + 5 Minutes ) 
 ```
 cd /workspace/HITNET
 ```
@@ -107,12 +107,12 @@ python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type S
 ```
 conda activate vitis-ai-wego-torch
 ```
-##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Synthetic Input shape 540 x 960
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Synthetic Input shape 540 x 960 :
 ```
 python synthetic_inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego 
 ```
 
-##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input shape 540 x 960
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input shape 540 x 960 :
 ```
 python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego \
                     --left=data/inputs/0006_left.png --right=data/inputs/0006_right.png --disp=data/inputs/0006.pfm
