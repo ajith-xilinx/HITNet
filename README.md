@@ -65,13 +65,13 @@ conda activate vitis-ai-wego-torch
 
 ##### To Run Inference of HITNet model on Synthetic Input of shape 540 x 960 ( This Step will take approx 5 Minutes )
 ```
-python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --shape=1,3,540,960 \
+python synthetic_inference.py --model_path quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 \
                               --wego_subgraph_min_ops_number=1 --device=wego
 ```
 
 ##### To Run Inference of HITNet model on Synthetic Input of shape 992 x 1420 : ( This Step will take approx 25 Minutes )
 ```
-python synthetic_inference.py --model_path quant_small/PredictModel_int.pt --shape=1,3,992,1420 \
+python synthetic_inference.py --model_path quant_model_992x1420/PredictModel_int.pt --shape=1,3,992,1420 \
                               --wego_subgraph_min_ops_number=1 --device=wego
 ```
 
@@ -105,7 +105,7 @@ python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_t
 ```
 conda activate vitis-ai-wego-torch
 ```
-##### To Run Inference of HITNet model on Synthetic Input of shape 992 x 1420
+##### To Run Inference of HITNet model with Synthetic Input shape 540 x 960
 ```
 python inference.py 
 ```
