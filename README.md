@@ -120,6 +120,8 @@ python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape
 ```
 
 ### Performance Issues and Planned Future Improvements :
+This Release is basically to prove the functionality of HITNet Model Inference on Vitis-AI 
+
 There might be end2end performance issues when deploying the HitModel on the DPU using WeGO due to:
 
 * Currently, DPU supports only a limit set of operators [Supported-Operators-and-DPU-Limitations](https://docs.xilinx.com/r/en-US/ug1414-vitis-ai/Supported-Operators-and-DPU-Limitations)
