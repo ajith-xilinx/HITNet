@@ -119,7 +119,7 @@ python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape
 
 ```
 
-### Performance Issues and Future Improvments :
+### Performance Issues and Planned Future Improvements :
 There might be end2end performance issues when deploying the HitModel on the DPU using WeGO due to:
 
 * Currently, DPU supports only a limit set of operators [Supported-Operators-and-DPU-Limitations](https://docs.xilinx.com/r/en-US/ug1414-vitis-ai/Supported-Operators-and-DPU-Limitations)
@@ -128,9 +128,9 @@ There might be end2end performance issues when deploying the HitModel on the DPU
 * For the model with input size 540x960, after partition, there will be 26 CPU subgrahs and 25 DPU subgraphs
 * Due to this, the large amounts of data transfer overhead occurs between host and deivce
 
-### Future Improvments that are in Plan to boost the Performance of HItNet Model :
+### Future Improvments that are in Plan to boost the Performance of HITNet Model :
 
-* Upgrade both DPU IP and xcompiler to cover more operator types thus we can accelerate HitNet Model further using DPU
+* Upgrade both DPU IP and xcompiler to cover more operator types
   * Eg. aten::leaky_relu ( with factor 0.2 ), aten::constant_pad_nd, etc.
   * This will drastically improve the performance as we reducing the Badwidth load requirement between DPU & CPU
-* Optimize Transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels.
+* Optimize Transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels
