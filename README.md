@@ -63,12 +63,12 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
 conda activate vitis-ai-wego-torch 
 ```
 
-##### To Run Inference of HITNet model on Synthetic Input of shape 540 x 960 ( This Step will take approx 5 Minutes )
+##### To Run Inference of Quantized HITNet model on Synthetic Input of shape 540 x 960 ( This Step will take approx 5 Minutes )
 ```
 python synthetic_inference.py --model quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --wego_subgraph_min_ops_number=1 --device=wego
 ```
 
-##### To Run Inference of HITNet model on Synthetic Input of shape 992 x 1420 : ( This Step will take approx 25 Minutes )
+##### To Run Inference of Quantized HITNet model on Synthetic Input of shape 992 x 1420 : ( This Step will take approx 25 Minutes )
 ```
 python synthetic_inference.py --model quant_model_992x1420/PredictModel_int.pt --shape=1,3,992,1420 --wego_subgraph_min_ops_number=1 --device=wego
 ```
@@ -103,11 +103,17 @@ python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type S
 ```
 conda activate vitis-ai-wego-torch
 ```
-##### To Run Inference of HITNet model with Synthetic Input shape 540 x 960
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Synthetic Input shape 540 x 960
 ```
-python inference.py 
+python synthetic_inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --wego_subgraph_min_ops_number=1 --device=wego 
 ```
 
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input shape 540 x 960
+```
+python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego \
+                    --left=0006_left.png --right=0006_right.png --disp=./0006.pfm
+
+```
 
 ### Performance Issues and Future Improvments :
 There might be end2end performance issues when deploying the HitModel on the DPU using WeGO due to:
