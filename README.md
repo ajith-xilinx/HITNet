@@ -121,5 +121,5 @@ There might be end2end performance issues when deploying the HitModel on the DPU
 ### Future Improvments that are in Plan to boost the Performance of HItNet Model :
 
 * Upgrade both DPU IP and xcompiler to cover more operator types thus we can accelerate HitNet Model further using DPU
-*   eg. aten::leaky_relu ( with factor 0.2 ), aten::constant_pad_nd, etc.
+  * Eg. aten::leaky_relu ( with factor 0.2 ), aten::constant_pad_nd, etc.
 * Optimize transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels.
