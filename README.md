@@ -50,10 +50,10 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir output/quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir output/quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
 ```
 
 #### 2.2 Compile & Run Inference  - Synthetic Data :
@@ -90,12 +90,12 @@ cd /workspace/Vitis-AI/HITNet
 ```
 python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow --use_cpu \
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
-                   --nndct_leaky_relu_approximate False --use_cpu --output_dir output/quant_model_992x1420 --quant_mode calib
+                   --nndct_leaky_relu_approximate False --use_cpu --output_dir real_quant_model_540x960 --quant_mode calib
 ```
 ```
 python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow --use_cpu \
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
-                   --nndct_leaky_relu_approximate False --output_dir output/quant_model_992x1420  --quant_mode test
+                   --nndct_leaky_relu_approximate False --output_dir real_quant_model_540x960  --quant_mode test
 ```
 #### 3.2 Compile & Run Inference  - Real Data :
 ------------------------------------------------------------
