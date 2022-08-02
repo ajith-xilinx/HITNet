@@ -39,10 +39,10 @@ conda activate vitis-ai-pytorch
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --quant_mode calib
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --quant_mode calib
 ```
 ```
-python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --quant_mode test
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --quant_mode test
 ```
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 992 x 1420 : ( This Step will take approx 12 + 3 Minutes ) 
@@ -50,10 +50,10 @@ python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode calib
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode calib
 ```
 ```
-python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode test
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode test
 ```
 
 #### 2.2 Compile & Run Inference  - Synthetic Data :
@@ -90,12 +90,12 @@ conda activate vitis-ai-pytorch
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
+python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
                    --nndct_leaky_relu_approximate False --use_cpu --quant_mode calib
 ```
 ```
-python quantize.py --model HITNetXL_SF --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
+python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow \
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
                    --nndct_leaky_relu_approximate False --use_cpu --quant_mode test
 ```
