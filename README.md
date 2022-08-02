@@ -50,10 +50,10 @@ python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --quant_mode calib 
+python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode calib
 ```
 ```
-python synthetic_quantize.py --nndct_leaky_relu_approximate False --use_cpu --quant_mode test 
+python synthetic_quantize.py --model ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --quant_mode test
 ```
 
 #### 2.2 Compile & Run Inference  - Synthetic Data :
