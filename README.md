@@ -116,8 +116,8 @@ There might be end2end performance issues when deploying the HitModel on the DPU
 
 * Currently, DPU supports only a limit set of operators [Supported-Operators-and-DPU-Limitations]
 * For those operators that not supported by the DPU, WeGO will dispatch them to CPU side for execution to enable a flexiable deployment workflow. 
-* Currently, HitNet model has many operators not supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
-* For the model with input size 540x960, after partition, there will be 26 cpu subgrahs and 25 dpu subgraphs
+* Currently, HitNet model has many operators *not* supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
+* For the model with input size 540x960, after partition, there will be 26 CPU subgrahs and 25 DPU subgraphs
 * Due to this, the large amounts of data transfer overhead occurs between host and deivce
 
 ### Future Improvments that are in Plan to boost the Performance of HItNet Model :
