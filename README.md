@@ -114,16 +114,15 @@ python inference.py
 ### Performance Issues and Future Improvments :
 There might be end2end performance issues when deploying the HitModel on the DPU using WeGO due to:
 
-> Since DPU only supports a limit set of operators [Supported-Operators-and-DPU-Limitations]
-> For those operators not supported by the DPU, WeGO will dispatch them to CPU side for execution to enable a flexiable deployment workflow. 
-> But if the model to be deployed has too many operators not covered by the DPU, then the whole model will be partitioned into many dpu subgraphs and cpu subgraphs, which may result in performance issues since it will require lots of data transfer between host and device side during the execution of cpu subgraphs and dpu subgrahps. 
-> Unfortunately, this is the case for HitNet model, which has so many operators not supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
-> For the model with input size 540x960, after partition, there will be 26 cpu subgrahs and 25 dpu subgraphs! (Please see the 'wego_partition_result.txt' for more details after the model is compiled by WeGO.)
+* Since DPU only supports a limit set of operators [Supported-Operators-and-DPU-Limitations]
+* For those operators not supported by the DPU, WeGO will dispatch them to CPU side for execution to enable a flexiable deployment workflow. 
+* Currently, HitNet model has many operators not supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
+* For the model with input size 540x960, after partition, there will be 26 cpu subgrahs and 25 dpu subgraphs! (Please see the 'wego_partition_result.txt' for more details after the model is compiled by WeGO.)
 Besides the large amounts of data transfer overhead between host and deivce, the memory layout difference between DPU and PyTorch(NHWC vs NCHW) will degrade the performance further. 
-> For each DPU subgraph's execution, WeGO needs to perform transpose operations for both its input and output tensors, which will consume a lot of time if there are too many dpu subgrahps and the size of input/output tensor size is large. 
+* For each DPU subgraph's execution, WeGO needs to perform transpose operations for both its input and output tensors, which will consume a lot of time if there are too many dpu subgrahps and the size of input/output tensor size is large. 
 Our Cloud DPU(s) is designed with multiple PEs for batch inference to enable better throughput performance(e.g. the DPUCVDX8H_ISA1_F2W4_6PE with 6PEs), so it's better to use batch inputs for inference using WeGO to enable fully utilization of the DPU computation resouce. But it's worth noting that this may demand large amouts of memory from both host and device side when the model size is large.
 
 ### Future Improvments that are in Plan to boost the Performance of HItNet Model :
 
-> Upgrade both DPU IP and xcompiler to cover more operator types thus we can accelerate HitNet Model further using DPU, eg. the aten::leaky_relu(with factor 0.2), aten::constant_pad_nd, etc.
-> Optimize transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels.
+* Upgrade both DPU IP and xcompiler to cover more operator types thus we can accelerate HitNet Model further using DPU, eg. the aten::leaky_relu(with factor 0.2), aten::constant_pad_nd, etc.
+* Optimize transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels.
