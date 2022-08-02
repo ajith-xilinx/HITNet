@@ -5,7 +5,7 @@
 #### HITNet : [Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching](https://arxiv.org/pdf/2007.12140.pdf)
 
 
-### Step 1 : On Host System : 
+### On Host System : 
 ------------------------------------------------------------
 
 ```
@@ -18,7 +18,7 @@ sudo docker start vitisai_2.5
 sudo docker exec -it vitisai_2.5 bash
 ```
 
-### Step 2 : Inside Docker : 
+### Inside Docker : 
 ------------------------------------------------------------
 
 ##### Set VCK5000 Environment 
@@ -27,7 +27,7 @@ sudo docker exec -it vitisai_2.5 bash
 source /workspace/setup/vck5000/setup.sh DPUCVDX8H_8pe_normal
 ```
 
-#### 2.1 Qunatize - Synthetic Data :
+#### 1.1 Qunatize - Synthetic Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
 ```
@@ -60,7 +60,7 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
                              --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
 ```
 
-#### 2.2 Compile & Run Inference  - Synthetic Data :
+#### 1.2 Compile & Run Inference  - Synthetic Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
@@ -81,7 +81,7 @@ python synthetic_inference.py --model quant_model_992x1420/PredictModel_int.pt -
 
 <br>
 
-#### 3.1 Qunatize - Real Data :
+#### 2.1 Qunatize - Real Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI Pytorch Conda Environment 
 ```
@@ -101,7 +101,7 @@ python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type S
                    --data_root_val data/subset_of_sf --data_list_val data/subset_of_sf/sceneflow_test_sub.list \
                    --nndct_leaky_relu_approximate False --output_dir real_quant_model_540x960 --quant_mode test --deploy
 ```
-#### 3.2 Compile & Run Inference  - Real Data :
+#### 2.2 Compile & Run Inference  - Real Data :
 ------------------------------------------------------------
 ##### Activate VITIS-AI WeGo Conda Environment to Run Inference 
 ```
