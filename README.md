@@ -115,7 +115,7 @@ python synthetic_inference.py --model real_quant_model_540x960/PredictModel_int.
 ##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input shape 540 x 960
 ```
 python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego \
-                    --left=0006_left.png --right=0006_right.png --disp=./0006.pfm
+                    --left=data/inputs/0006_left.png --right=data/inputs/0006_right.png --disp=data/inputs/0006.pfm
 
 ```
 
