@@ -36,7 +36,7 @@ conda activate vitis-ai-pytorch
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 : ( This Step will take approx 5 + 2 Minutes ) 
 ```
-cd /workspace/Vitis-AI/HITNet
+cd /workspace/Vitis-AI/HITNET
 ```
 ```
 python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 \
@@ -49,7 +49,7 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 992 x 1420 : ( This Step will take approx 12 + 3 Minutes ) 
 ```
-cd /workspace/Vitis-AI/HITNet
+cd /workspace/Vitis-AI/HITNET
 ```
 ```
 python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 \
@@ -89,7 +89,7 @@ conda activate vitis-ai-pytorch
 ```
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 ( This Step will take approx 45 + 5 Minutes ) 
 ```
-cd /workspace/Vitis-AI/HITNet
+cd /workspace/Vitis-AI/HITNET
 ```
 ```
 python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type SceneFlow --use_cpu \
