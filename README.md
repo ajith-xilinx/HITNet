@@ -5,7 +5,7 @@
 #### HITNet : [Hierarchical Iterative Tile Refinement Network for Real-time Stereo Matching](https://arxiv.org/pdf/2007.12140.pdf)
 
 
-### On Host System : 
+### I. On Host System : 
 ------------------------------------------------------------
 
 ```
@@ -18,7 +18,7 @@ sudo docker start vitisai_2.5
 sudo docker exec -it vitisai_2.5 bash
 ```
 
-### Inside Docker : 
+### II. Inside Docker : 
 ------------------------------------------------------------
 
 ##### Set VCK5000 Environment 
