@@ -39,7 +39,8 @@ conda activate vitis-ai-pytorch
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib 
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 \
+--output_dir quant_model_540x960 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib 
 ```
 ```
 python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
