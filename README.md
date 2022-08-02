@@ -76,7 +76,10 @@ python synthetic_inference.py --model quant_model_540x960/PredictModel_int.pt --
 ```
 python synthetic_inference.py --model quant_model_992x1420/PredictModel_int.pt --shape=1,3,992,1420 --wego_subgraph_min_ops_number=1 --device=wego
 ```
-
+###### wego_subgraph_min_ops_number : partition limitation for WeGO
+###### If there are a lot of operators not supported by DPU, then the whole model may be partitioned into many dpu subgraphs and cpu subgraphs. 
+###### If each dpu subgraph only contains a minor number of operators, then dispatching these subgraphs into dpu for execution may lead to performance issues due to frequently memory copy between host and dpu device
+<br> 
 ###### To Run Inference of HITNet model, run the above commands with "--device=cpu"
 
 <br>
