@@ -127,10 +127,14 @@ There might be end2end performance issues when deploying the HitModel on the DPU
 * Currently, HitNet model has many operators *not* supported by DPU: aten::clone, aten::sub, aten::constant_pad_nd, aten::lekay_relu(with factor 0.2), aten::slice etc. 
 * For the model with input size 540x960, after partition, there will be 26 CPU subgrahs and 25 DPU subgraphs
 * Due to this, the large amounts of data transfer overhead occurs between host and deivce
+* For each DPU subgraph's execution, WeGO needs to perform transpose operations for both its input and output tensors
+* This is consuming a lot of time as there are many DPU subgrahps and the size of input/output tensor size is large 
+* This memory layout difference between DPU and PyTorch ( NHWC vs NCHW ) will degrade the performance further
+
 
 ### Future Improvments that are in Plan to boost the Performance of HITNet Model :
 
 * Upgrade both DPU IP and xcompiler to cover more operator types
   * Eg. aten::leaky_relu ( with factor 0.2 ), aten::constant_pad_nd, etc.
-  * This will drastically improve the performance as we reducing the Badwidth load requirement between DPU & CPU
+  * This will drastically improve the performance as we reducing the Bandwidth load requirement between DPU & CPU
 * Optimize Transpose operation by either supporting it in DPU directly or integrating WeGO with ZenDNN to leverage AMD-CPU highly-optimzed transpose kernels
