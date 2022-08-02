@@ -87,7 +87,7 @@ python synthetic_inference.py --model quant_model_992x1420/PredictModel_int.pt -
 ```
 conda activate vitis-ai-pytorch 
 ```
-##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 ( This Step will take approx 12 + 3 Minutes ) 
+##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 540 x 960 ( This Step will take approx 45 + 5 Minutes ) 
 ```
 cd /workspace/Vitis-AI/HITNet
 ```
