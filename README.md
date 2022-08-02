@@ -39,11 +39,12 @@ conda activate vitis-ai-pytorch
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 \
---output_dir quant_model_540x960 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib 
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 \
+                             --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib 
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 540 --w 960 --output_dir quant_model_540x960 \
+                             --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
 ```
 
 ##### To Run Synthetic Calibration & Generate INT8 Model for Input shape 992 x 1420 : ( This Step will take approx 12 + 3 Minutes ) 
@@ -51,10 +52,12 @@ python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h
 cd /workspace/Vitis-AI/HITNet
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 \
+                             --use_cpu --nndct_leaky_relu_approximate False --quant_mode calib
 ```
 ```
-python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
+python synthetic_quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --h 992 --w 1420 --output_dir quant_model_992x1420 \
+                             --use_cpu --nndct_leaky_relu_approximate False --quant_mode test
 ```
 
 #### 2.2 Compile & Run Inference  - Synthetic Data :
