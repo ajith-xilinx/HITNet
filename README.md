@@ -107,12 +107,12 @@ python quantize.py --ckpt ckpt/hitnet_xl_sf_finalpass_from_tf.ckpt --data_type S
 ```
 conda activate vitis-ai-wego-torch
 ```
-##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Synthetic Input shape 540 x 960 :
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Synthetic Input of shape 540 x 960 :
 ```
 python synthetic_inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego 
 ```
 
-##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input shape 540 x 960 :
+##### To Run Inference of  HITNet model ( Quantized with Real Images ) with Real Input of shape 540 x 960 :
 ```
 python inference.py --model real_quant_model_540x960/PredictModel_int.pt --shape=1,3,540,960 --device=wego \
                     --left=data/inputs/0006_left.png --right=data/inputs/0006_right.png --disp=data/inputs/0006.pfm
